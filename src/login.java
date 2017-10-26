@@ -97,14 +97,14 @@ public class login extends HttpServlet {
 				 // response.sendRedirect("/specificUser.jsp");
 			        
 				  RequestDispatcher rd = request.getRequestDispatcher("/specificUser.jsp");
-				  rd.forward(request,response);
+				 rd.forward(request,response);
 			  }
 			  
 			   out.println(uid+ ":" + name);
 			   out.println();
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generated catch blobhishck
 			e.printStackTrace();
 		}
 		try {

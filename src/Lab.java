@@ -39,7 +39,7 @@ public class Lab extends HttpServlet {
         String database_name = request.getParameter("database_name");
 		int at=0;
 	    PrintWriter out = response.getWriter();
-	    out.println("good");
+	    //out.println("good");
 	   boolean st=false;
 
 		try{

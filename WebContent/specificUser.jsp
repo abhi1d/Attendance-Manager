@@ -10,7 +10,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 <link rel="stylesheet" href= "MyStyle.css" type = "text/css">
 </head>
-<body>
+<body class = "background_specific_user">
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%@ page import ="javax.servlet.*" %>
@@ -21,18 +21,22 @@
  HttpSession ses1 = request.getSession();
  ses1.setAttribute("uname",n);
  %>
- <h3>Hello,</h3><h3><% out.println(first_name);%></h3>
- <h2 class = "editButton"><a href = "Edit.html"><button class = "btn btn-default btn-primary" >Edit</button></a></h2>
- <div class = "newDataBaseForm">
+ <div >
  <br>
  <br>
- <h2>Have you created a database ?</h2>
- <%%>
- <a href="newUser.html"><button>No</button><br></a>
- <a href="specificUser.jsp"><button>Yes</button></a>
+ <br>
+<h3  class = "text-center" style ="font-color:white;"> Hello,</h3><h3 class = "text-center"><% out.println(first_name);%></h3>
+<br>
+<br>
+ <h1  class = "text-center"><a href = "Profile.jsp"><button class = "btn btn-default btn-primary">Profile</button></a></h1><br><br>
+ <h1 class = "text-center"><a href = "Edit.html"><button class = "btn btn-default btn-primary" >Edit</button></a></h1>
+
+ <br>
+ <br>
+
  <br>
  <br>
  </div>
- 
+
 </body>
 </html>

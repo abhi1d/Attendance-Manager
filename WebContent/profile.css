@@ -1,0 +1,33 @@
+@charset "UTF-8";
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width : 60%;
+    align:center;
+}
+
+td, th {
+    border: 1px solid blue;
+    text-align: center;
+    padding: 3px;
+    font-size:15px;
+    
+}
+#inr_button{
+    padding:2px;
+	margin : 2px;
+	border-radius:25px;
+}
+#dec_button{
+	padding:2px;
+	margin : 2px;
+	border-radius:25px;
+}
+tr:nth-child(even) {
+    background-color: #b0e0e6;
+    
+}
+tr:nth-child(odd){
+	background-color white;
+   
+}

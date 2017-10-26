@@ -41,6 +41,8 @@ public class Interconnection extends HttpServlet {
 		 
 		 //RequestDispatcher rd = request.getRequestDispatcher("/newDataBase.jsp");
 		 //rd.forward(request,response); 
+		 HttpSession ses=request.getSession();  
+		 ses.setAttribute( "db",database_name);  
 		 request.setAttribute("udatabase",database_name);
 		 		//-- Return some output to the client 
 		 request.getRequestDispatcher("newDataBase.jsp").forward(request, response); 

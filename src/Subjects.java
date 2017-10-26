@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.mysql.cj.jdbc.PreparedStatement;
 
@@ -40,7 +41,11 @@ public class Subjects extends HttpServlet {
         String database_name = request.getParameter("database_name");
 		int at=0;
 	    PrintWriter out = response.getWriter();
-	    out.println("good");
+	    //out.println("good");
+
+		HttpSession se1 = request.getSession();
+		se1.setAttribute("database_name", database_name);
+		
 	   boolean st=false;
 
 		try{
@@ -71,10 +76,10 @@ public class Subjects extends HttpServlet {
 }
  if(st)
  {
-	 ServletContext context= getServletContext();
-		RequestDispatcher rd= context.getRequestDispatcher("/Edit.html");
+	 ServletContext context1= getServletContext();
+		RequestDispatcher rd1= context1.getRequestDispatcher("/Edit.html");
 		out.println("<font color=red>Subject already exists</font>");
-		rd.include(request, response);
+		rd1.include(request, response);
 	 
  }
 	 else
