@@ -100,8 +100,7 @@ public class login extends HttpServlet {
 				 rd.forward(request,response);
 			  }
 			  
-			   out.println(uid+ ":" + name);
-			   out.println();
+			   
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch blobhishck

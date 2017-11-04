@@ -16,3 +16,68 @@
 	background-color:green;
 
 }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+   
+   
+}
+
+li {
+    float:right;
+     padding: 10px 2px 5px 20px;
+     font-size:18px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}
+
+#hello{
+background-color:white;
+margin : 2px;
+padding:5px;
+border-corner: 5px;
+font-color:white;
+}
+.homePage{
+	background-color:green;
+
+	
+}
+
+.text-center{
+	color:white;
+	font-family:monospace;
+}
+.nav{
+	
+	padding:2px 10px 2px 10px;
+	font-family:monospace;
+	border-radius:4px;
+	color:white;
+	
+}
+.btn-danger{
+	
+	width:200px;
+	color:white;
+}
+#registerPage{
+	background-color:black;
+}
+.register{
+	background-color:white;
+	
+}

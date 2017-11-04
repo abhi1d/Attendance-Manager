@@ -33,7 +33,9 @@ public class Interconnection extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String database_name = request.getParameter("database_name");
+		//String database_name = request.getParameter("database_name");
+		HttpSession se1 = request.getSession(false);
+		String database_name = (String) se1.getAttribute("db_name");
 		// String first_name = (String)ses.getAttribute("fname");
 		 //request.setAttribute("udatabase",database_name);
 		 //request.setAttribute("fname",first_name);

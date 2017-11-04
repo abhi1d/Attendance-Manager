@@ -10,6 +10,43 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 <link rel="stylesheet" href= "MyStyle.css" type = "text/css">
 </head>
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+   
+   
+}
+
+li {
+    float:right;
+     padding: 10px 2px 5px 20px;
+     font-size:18px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}
+#hello{
+background-color:white;
+margin : 2px;
+padding:5px;
+border-corner: 5px;
+font-color:white;
+}
+</style>
 <body class = "background_specific_user">
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
@@ -21,15 +58,31 @@
  HttpSession ses1 = request.getSession();
  ses1.setAttribute("uname",n);
  %>
- <div >
+ <div>
  <br>
  <br>
  <br>
-<h3  class = "text-center" style ="font-color:white;"> Hello,</h3><h3 class = "text-center"><% out.println(first_name);%></h3>
+<div  class = "text-center" id = "hello"  ><h3  class = "text-center" font-color="#fffff"> Hello,</h3><h3 class = "text-center" color = "#fff"><% out.print(first_name);%></h3></div>
 <br>
 <br>
- <h1  class = "text-center"><a href = "Profile.jsp"><button class = "btn btn-default btn-primary">Profile</button></a></h1><br><br>
- <h1 class = "text-center"><a href = "Edit.html"><button class = "btn btn-default btn-primary" >Edit</button></a></h1>
+<div class = "row">
+<div class = "col-xs-2">
+<br>
+<br>
+
+<ul>
+
+<li><a href="#" color = "white">Profile</a></li><br>
+  <li><a href="Profile.jsp">Attendance</a></li><br>
+  <li><a href="Edit.jsp">Edit</a></li><br>
+  <li><a href="#">About</a></li><br>
+  <br>
+  <br>
+  <br>
+  <br>
+</ul>
+</div>
+</div>
 
  <br>
  <br>

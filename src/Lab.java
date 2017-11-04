@@ -36,7 +36,9 @@ public class Lab extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		String s_name=request.getParameter("labname");
-        String database_name = request.getParameter("database_name");
+
+		HttpSession s1 = request.getSession(false);
+		String database_name = (String)s1.getAttribute("db_name");
 		int at=0;
 	    PrintWriter out = response.getWriter();
 	    //out.println("good");
@@ -66,12 +68,12 @@ public class Lab extends HttpServlet {
 	st=rs.next();
 } catch (SQLException e1) {
 	// TODO Auto-generated catch block
-	e1.printStackTrace();
+	out.print("You already added this lab to your database\n Now try with another");
 }
  if(st)
  {
 	 ServletContext context= getServletContext();
-		RequestDispatcher rd= context.getRequestDispatcher("/Edit.html");
+		RequestDispatcher rd= context.getRequestDispatcher("/Edit.jsp");
 		out.println("<font color=red>Subject already exists</font>");
 		rd.include(request, response);
 	 
@@ -100,7 +102,7 @@ public class Lab extends HttpServlet {
 			rd1.include(request, response);*/
 			out.println("<h2>You successfully added subject to your profile</h2>");
 			out.println("<br>");
-			out.println("<h2>If you want to add more then <a href = 'Edit.html'>click Here</a></h2>");
+			out.println("<h2>If you want to add more then <a href = 'Edit.jsp'>click Here</a></h2>");
 			
 			}
 		} catch (SQLException e) {

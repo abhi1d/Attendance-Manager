@@ -14,6 +14,8 @@
         HttpSession ses=request.getSession(false);  
         String db_name=(String)ses.getAttribute("db");
         String user_name = (String)ses.getAttribute("usr");
+        HttpSession ses1=request.getSession();  
+        ses1.setAttribute("db_name",db_name);
        %>
        <br>
        <br>
@@ -58,10 +60,14 @@
      while(rs.next()) {
         String sub = rs.getString("sub");
         String attend = rs.getString("attend");
+        HttpSession ses3=request.getSession();  
+        ses3.setAttribute("sub",sub);
+        ses3.setAttribute("db_name",db_name+"Sub");
+        ses3.setAttribute("attend",attend);
         %>
     <tr>
     <td><%out.print(sub);%></td>
-    <td><button  class = "btn btn-default btn-danger"  id = "dec_button" ><h6 style = "padding:15px;">-</h6></button><%out.print(attend);%><button class = "btn btn-default btn-success"  id = "inr_button"><h6 style = "padding:15px;">+</h6></button></td>
+    <td><button  class = "btn btn-default btn-danger"  id = "dec_button" ><h6 style = "padding:15px;">-</h6></button><%out.print(attend);%><a href = "incrementSub.jsp"><button class = "btn btn-default btn-success"  id = "inr_button"><h6 style = "padding:15px;">+</h6></button></a></td>
      
     </tr>
         <% 
@@ -81,13 +87,21 @@
      while(rs.next()) {
         String lab = rs.getString("lab");
         String attend = rs.getString("attend");
+        HttpSession ses2=request.getSession();  
+        ses2.setAttribute("sub",lab);
+        ses2.setAttribute("db_name",db_name+"Lab");
+        ses2.setAttribute("attend",attend);
+        
+        
         %>
     <tr>
     <td><%out.print(lab);%></td>
-    <td><button  class = "btn-danger"  id = "dec_button" ><h6 style = "padding:15px;">-</h6></button><%out.print(attend);%><button class = "btn-success"  id = "inr_button"><h6 style = "padding:15px;">+</h6></button></td>
+    <td><a href = "decrement.java"><button  class = "btn-danger"  id = "dec_button" ><h6 style = "padding:15px;">-</h6></button></a><%out.print(attend);%><a href = "incrementLab.jsp"><button class = "btn-success"  id = "inr_button"><h6 style = "padding:15px;">+</h6></button></a></td>
       
     </tr>
         <% 
+        
+        
        }
     } catch (SQLException e) {
    	 out.println("Error in making tables ! \n let me fix");

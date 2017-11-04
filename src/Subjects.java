@@ -38,7 +38,9 @@ public class Subjects extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		String s_name=request.getParameter("subname");
-        String database_name = request.getParameter("database_name");
+		HttpSession s1 = request.getSession(false);
+		
+        String database_name = (String)s1.getAttribute("db_name");
 		int at=0;
 	    PrintWriter out = response.getWriter();
 	    //out.println("good");
@@ -72,12 +74,12 @@ public class Subjects extends HttpServlet {
 	st=rs.next();
 } catch (SQLException e1) {
 	// TODO Auto-generated catch block
-	e1.printStackTrace();
+	out.print("You already added this subject to your database\n Now try with another");
 }
  if(st)
  {
 	 ServletContext context1= getServletContext();
-		RequestDispatcher rd1= context1.getRequestDispatcher("/Edit.html");
+		RequestDispatcher rd1= context1.getRequestDispatcher("/Edit.jsp");
 		out.println("<font color=red>Subject already exists</font>");
 		rd1.include(request, response);
 	 
@@ -106,7 +108,7 @@ public class Subjects extends HttpServlet {
 			rd1.include(request, response);*/
 			out.println("<h2>You successfully added subject to your profile</h2>");
 			out.println("<br>");
-			out.println("<h2>If you want to add more then <a href = 'Edit.html'>click Here</a></h2>");
+			out.println("<h2>If you want to add more then <a href = 'Edit.jsp'>click Here</a></h2>");
 			
 			}
 		} catch (SQLException e) {
